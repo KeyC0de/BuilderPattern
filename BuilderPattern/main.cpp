@@ -1,6 +1,7 @@
 #include <iostream>
 #include "car_builder.h"
 
+
 int main()
 {
 	std::wcout << "sizeof(Car)=" << sizeof( Car ) << '\n';
