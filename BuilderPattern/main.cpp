@@ -4,18 +4,22 @@
 
 int main()
 {
-	std::wcout << "sizeof(Car)=" << sizeof( Car ) << '\n';
-	std::wcout << "sizeof(Car::Builder)=" << sizeof( Car::Builder ) << L'\n' << L'\n';
+	std::cout << "sizeof(Car)="
+		<< sizeof( Car )
+		<< '\n';
+	std::cout << "sizeof(Car::Builder)="
+		<< sizeof( Car::Builder )
+		<< "\n\n";
 
 	auto truckMaster = Car::Builder{}
-			.setWeight( 20 )
-			.setName( L"Truck Master 18-Wheeler" )
-			.setColor( L"yellow" )
-			.setDoorCount( 5 )
-			.setTireCount( 8 )
-			.setMaterial( Material::SyntheticRubber )
-			.setPower( 6000 )
-			.create();
+		.setWeight( 20 )
+		.setName( "Truck Master 18-Wheeler" )
+		.setColor( "yellow" )
+		.setDoorCount( 5 )
+		.setTireCount( 8 )
+		.setMaterial( Material::SyntheticRubber )
+		.setPower( 6000 )
+		.create();
 	
 	truckMaster->present();
 	truckMaster->cruise();
