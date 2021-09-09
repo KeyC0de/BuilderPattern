@@ -5,7 +5,9 @@
 Engine::Engine( int power )
 	:
 	m_power(power)
-{}
+{
+
+}
 
 int Engine::getPower() const noexcept
 {
@@ -23,17 +25,18 @@ Car::Car( float weight,
 	const std::string& color,
 	const std::string& name )
 	:
-	m_weight{weight},
-	m_width{width},
-	m_doorCount{doorCount},
-	m_tireCount{tireCount},
+	m_weight(weight),
+	m_width(width),
+	m_doorCount(doorCount),
+	m_tireCount(tireCount),
 	m_type{type},
 	m_pEngine{std::move( peng )},
 	m_tires{tires},
 	m_color{color},
 	m_name{name}
 {
-	std::cout << name << " created!" << '\n';
+	std::cout << name
+		<< " created!\n";
 }
 
 std::unique_ptr<Car> Car::Builder::create() const
@@ -42,8 +45,8 @@ std::unique_ptr<Car> Car::Builder::create() const
 	if ( m_power > 2000 )
 	{
 		type = ( m_tireCount > 4 ) ?
-			Type::Truck
-			: Type::Sports;
+			Type::Truck :
+			Type::Sports;
 	}
 	else
 	{
