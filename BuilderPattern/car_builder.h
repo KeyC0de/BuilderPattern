@@ -64,9 +64,7 @@ public:
 	Car( float weight, float width, int doorCount, int tireCount, Type type,
 		std::unique_ptr<Engine> peng, const Tires& tires, const std::string& color,
 		const std::string& name );
-
 	~Car();
-
 	Car( const Car& rhs) = delete;
 	Car& operator=( const Car& rhs) = delete;
 
